@@ -1,12 +1,16 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React, { Component } from 'react';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+class Kennel extends Component {
+    render() {
+        return (
+            <div>
+                <h3>Student Kennels</h3>
+                <h4>Nashville North Location</h4>
+                <h5>500 Puppy Way</h5>
+            </div>
+        );
+    }
+}
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(<Kennel />, document.querySelector("#root"));
