@@ -10,7 +10,6 @@ class EmployeeList extends Component {
                     <div key={employee.id}>
                         {employee.name}
                     </div>
-
                 )
                 /*employee: this is just what we call the new array of data we received from the API when we used .map*/
                 /*employee.id: this is the dataset's id*/
