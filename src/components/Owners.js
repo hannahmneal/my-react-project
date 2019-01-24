@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 class Owners extends Component {
     render() {
         return (
-            <section className="owner">
+            <section className="owners">
             {
                 this.props.owners.map(owner =>
                     <div key={owner.id}>

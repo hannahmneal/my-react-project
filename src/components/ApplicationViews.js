@@ -17,22 +17,45 @@ export default class ApplicationViews extends Component {
         employees: [],
         locations: [],
         owners: []
-    }
+    };
 
+    //PRACTICE
+// state = {
+
+// }
+
+// FIRST ATTEMPT (COMMIT 9e58265)
+    // componentDidMount() {
+    //     const newState = {}
+
+    //     fetch("http://localhost:5002/animals").then(r => r.json())
+    //         .then(animals => newState.animals = animals)
+
+    //         .then(() => fetch("http://localhost:5002/employees").then(r => r.json()))
+    //         // .then(employees => newState.employees = employees)
+    //         .then(employees => {this.setState({employees:employees})
+    //         })
+
+
+    //         .then(() => fetch("http://localhost:5002/locations").then(r => r.json()))
+    //         .then(locations => newState.locations = locations)
+
+    //         .then(() => fetch("http://localhost:5002/owners").then(r => r.json()))
+    //         .then(owners => newState.owners = owners)
+    //         .then(() => this.setState(newState))
+    // }
+// CODE LEAH SENT AFTER EXPERIENCING 404 ERRORS WITH THE CODE ABOVE:
     componentDidMount() {
         const newState = {}
 
-        fetch("http://localhost:5002/animals").then(r => r.json())
+
+        fetch("http://localhost:5002/animals")
+            .then(r => r.json())
             .then(animals => newState.animals = animals)
-
-            .then(() => fetch("http://localhost:5002/employees").then(r => r.json()))
+            .then(() => fetch("http://localhost:5002/employees")
+            .then(r => r.json()))
             .then(employees => newState.employees = employees)
-
-            .then(() => fetch("http://localhost:5002/locations").then(r => r.json()))
-            .then(locations => newState.locations = locations)
-
-            .then(() => fetch("http://localhost:5002/owners").then(r => r.json()))
-            .then(owners => newState.owners = owners)
+            .then(() => this.setState(newState))
     }
 
     render() {
