@@ -10,15 +10,7 @@ import './components/nav/NavBar'
 ReactDOM.render(
     <Router>
         <Kennel />
-    </Router>
-    , document.getElementById('root'))
-
-
-
-
-
-
-
+    </Router>, document.getElementById('root'))
 
 
 //================================      SINGLE COMPONENT (USED FOR PRACTICES 1-3)       ==============================
