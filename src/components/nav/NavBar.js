@@ -18,6 +18,9 @@ class NavBar extends Component {
                         <Link className="nav-link" to="/employees">Employees</Link>
                         {/* This <Link/> component came from the React Router package that was installed for the navbar. It's attribute "to" will render a hyperlink on the DOM and, when clicked, will change the URL in the browser to the value of the "to" attribute.*/}
                     </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/owners">Owners</Link>
+                    </li>
                 </ul>
             </nav>
         )
