@@ -1,10 +1,33 @@
-//================================      SINGLE COMPONENT       ==============================
-
-import ReactDOM from "react-dom"
+//================================      CHAPTER 3: ROUTING       ==============================
 import React from 'react'
-import Kennel from "./components/Kennel"
+import ReactDOM from 'react-dom'
+import { BrowserRouter as Router } from "react-router-dom"
+import Kennel from './components/Kennel'
 
-ReactDOM.render(<Kennel />, document.querySelector("#root"));
+import './index.css'
+import './components/nav/NavBar'
+
+ReactDOM.render(
+    <Router>
+        <Kennel />
+    </Router>
+    , document.getElementById('root'))
+
+
+
+
+
+
+
+
+
+//================================      SINGLE COMPONENT (USED FOR PRACTICES 1-3)       ==============================
+
+// import ReactDOM from "react-dom"
+// import React from 'react'
+// import Kennel from "./components/Kennel"
+
+// ReactDOM.render(<Kennel />, document.querySelector("#root"));
 
 // Think of each one of your components as a factory function (i.e., a function that returns an object)
 //  extends Component {
