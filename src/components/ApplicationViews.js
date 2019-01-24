@@ -19,12 +19,6 @@ export default class ApplicationViews extends Component {
         owners: []
     };
 
-    //PRACTICE
-// state = {
-
-// }
-
-// FIRST ATTEMPT (COMMIT 9e58265)
     componentDidMount() {
         const newState = {}
 
@@ -36,15 +30,18 @@ export default class ApplicationViews extends Component {
             .then(employees => {this.setState({employees:employees})
             })
 
-
             .then(() => fetch("http://localhost:5002/locations").then(r => r.json()))
-            .then(locations => newState.locations = locations)
+            // .then(locations => newState.locations = locations)
+            .then(locations => {this.setState({locations:locations})})
 
             .then(() => fetch("http://localhost:5002/owners").then(r => r.json()))
             .then(owners => newState.owners = owners)
             .then(() => this.setState(newState))
     }
-// CODE LEAH SENT AFTER EXPERIENCING 404 ERRORS WITH THE CODE ABOVE:
+
+    // UPDATE: Resolved 404 error and commented out the code below; uncommented componentDidMount() above. Doing so resolved the issue with the  owners link displaying the correct info when clicked.
+    // CODE LEAH SENT AFTER EXPERIENCING 404 ERRORS WITH THE CODE ABOVE:
+
     // componentDidMount() {
     //     const newState = {}
 
