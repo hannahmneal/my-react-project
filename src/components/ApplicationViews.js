@@ -24,6 +24,8 @@ export default class ApplicationViews extends Component {
 
         fetch("http://localhost:5002/animals").then(r => r.json())
             .then(animals => newState.animals = animals)
+            // .then(animals => {this.setState({animals:animals})
+            // })
 
             .then(() => fetch("http://localhost:5002/employees").then(r => r.json()))
             // .then(employees => newState.employees = employees)
@@ -58,7 +60,11 @@ export default class ApplicationViews extends Component {
     render() {
         return (
             <React.Fragment>
-                <Route exact path="/" render={(props) => {
+                {/* If I wanted to set a "Home" screen before any of these are clicked, how would I do that? */}
+                {/* <Route exact path ="/" render{(props) => {
+                    return <Home/>
+                }} /> */}
+                <Route exact path="/animals" render={(props) => {
                     return <AnimalList animals={this.state.animals} />
                 }} />
                 <Route exact path="/employees" render={(props) => {

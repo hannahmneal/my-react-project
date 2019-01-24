@@ -10,7 +10,10 @@ class Locations extends Component {
                 { /* If you do not use "this." before "props", you will get an error message that says "failed to define..." */
                     this.props.locations.map(responseLocation =>
                         <div key={responseLocation.id}>
+                            <br/>
                             {responseLocation.name}
+                            <br/>
+                            {responseLocation.address}
                         </div>
                     )
                 }
