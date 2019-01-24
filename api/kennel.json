@@ -1,0 +1,27 @@
+{
+    "employees": [
+        { "id": 1, "name": "Jessica Younker" },
+        { "id": 2, "name": "Jordan Nelson" },
+        { "id": 3, "name": "Zoe LeBlanc" },
+        { "id": 4, "name": "Blaise Roberts" }
+    ],
+    "locations": [
+    { "id": 1, "name": "Nashville North", "address": "3749 Little Paws Parkway" },
+    { "id": 2, "name": "Nashville South", "address": "23098 Whiskers Way" }
+    ],
+
+    "animals": [
+        {"id": 1, "name": "Sage"},
+        {"id": 2, "name": "Clove"},
+        {"id": 3, "name": "Lady"},
+        {"id": 4, "name": "Ebony"},
+        {"id": 5, "name": "Moses"}
+],
+
+    "owners": [
+    {"id": 1, "name": "Hannah", "phoneNumber": 1234567},
+    {"id": 2, "name": "Brian", "phoneNumber": 8901234},
+    {"id": 3, "name": "Allison", "phoneNumber": 5678901},
+    {"id": 4, "name": "Emily", "phoneNumber": 2345678}
+]
+}
