@@ -3,8 +3,10 @@ import React, { Component } from 'react'
 // ================================================    PRACTICE 2      ===============================================
 class EmployeeList extends Component {
     render() {
+        console.log(this.props.employees);
+
         return (
-            <section className="employee">
+            <section className="employees">
             {
                 this.props.employees.map(employee =>
                     <div key={employee.id}>

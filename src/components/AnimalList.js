@@ -18,7 +18,7 @@ class AnimalList extends Component {
                 )
             }
             </section>
-        );
+        )
     }
 }
 
