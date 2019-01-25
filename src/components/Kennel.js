@@ -5,7 +5,7 @@ import React, { Component } from "react"
 import NavBar from "./nav/NavBar"
 import ApplicationViews from "./ApplicationViews"
 
-// import "./Kennel.css"    // When included, this throws an error in the terminal and the browser fails to load content.
+import "./Kennel.css"    // When included, this throws an error in the terminal and the browser fails to load content.
 import "bootstrap/dist/css/bootstrap.min.css"
 
 
@@ -80,6 +80,10 @@ export default Kennel
 // export default Kennel
 
 // ================================================    PRACTICE 2      ===============================================
+// import React, { Component } from "react";
+// import EmployeeList from "./employee/EmployeeList"; // Import EmployeeList component
+// import "./Kennel.css"  
+
 //     class Kennel extends Component {
 
 //     /*
@@ -117,6 +121,8 @@ export default Kennel
 
 // export default Kennel
 // ================================================    PRACTICE 1      ===============================================
+// import React, { Component } from "react";
+// import EmployeeList from "./employee/EmployeeList"; // Import EmployeeList component
 
 // export default class Kennel extends Component {
 //     render() {

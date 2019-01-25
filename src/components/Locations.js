@@ -28,6 +28,8 @@ export default Locations
 
 
 // ================================================    PRACTICE 1      ===============================================
+// import React, { Component } from 'react'
+
 
 // export default class Locations extends Component {
 //     render() {

@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
 
 // ================================================    PRACTICE 2      ===============================================
+import React, { Component } from 'react'
 class EmployeeList extends Component {
     render() {
         console.log(this.props.employees);
@@ -24,6 +24,9 @@ class EmployeeList extends Component {
 export default EmployeeList
 
 // ================================================    PRACTICE 1      ===============================================
+// import React, { Component } from 'react'
+
+
 // export default class EmployeeList  extends Component {
 //     render() {
 //         return (

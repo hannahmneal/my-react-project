@@ -1,5 +1,62 @@
 import React, { Component } from 'react'
 
+// ================================================  CHAPTER 5 SETUP    ===============================================
+
+import cat from "./CatIcon.png"
+import "./Animal.css"
+//===============================================   CHAPTER 5 CODE (COPY-PASTA)    ================================================
+export default class AnimalList extends Component {
+        render () {
+            return (
+                <section className="animals">
+                {
+                    this.props.animals.map(animal =>
+                        <div key={animal.id} className="card">
+                            <div className="card-body">
+                                <h5 className="card-title">
+                                    <img src={cat} className="icon--cat" alt="Cute cartoon cat face" />
+                                    {animal.name}
+                                    <a href="#"
+                                        onClick={() => this.props.deleteAnimal(animal.id)}
+                                        className="card-link">Delete</a>
+                                </h5>
+                            </div>
+                        </div>
+                    )
+                }
+                </section>
+            )
+        }
+    }
+
+
+//===============================================   LEAH'S CODE (COPY-PASTA)    ================================================
+//     return (
+//         <section className="animals">
+//           {this.props.animals.map(animal => (
+//             <div key={animal.id} className="card">
+//               <div className="card-body">
+//                 <h5 className="card-title">
+//                   <img src={dog} className="icon--dog" />
+//                   {animal.name}
+//                   <a
+//                     href="#"
+//                     onClick={() => this.props.deleteAnimal(animal.id)}
+//                     className="card-link"
+//                   >
+//                     Delete
+//                   </a>
+//                 </h5>
+//               </div>
+//             </div>
+//           ))}
+//         </section>
+//       );
+//     }
+//   }
+
+
+// ===============================================================================================
 // ================================================    PRACTICE 3      ===============================================
 // 1. Create a new array in state in the Kennel component named animals. It will look just like the locations and employees arrays in state. Make sure each animal has an id property.
     // This was done in Kennel.js
@@ -22,34 +79,6 @@ import React, { Component } from 'react'
 //     }
 // }
 
-// ================================================  CHAPTER 5 SETUP    ===============================================
-
-import cat from "./CatIcon.png"
-import "./Animal.css"
-export default class AnimalList extends Component {
-    render () {
-        return (
-            <section className="animals">
-            {
-                this.props.animals.map(animal =>
-                    <div key={animal.id} className="card">
-                        <div className="card-body">
-                            <h5 className="card-title">
-                                <img src={cat} className="icon--dog" />
-                                {animal.name}
-                                <a href="#"
-                                    onClick={() => this.props.deleteAnimal(animal.id)}
-                                    className="card-link">Delete</a>
-                            </h5>
-                        </div>
-                    </div>
-                )
-            }
-            </section>
-        )
-    }
-}
-// ===============================================================================================
 
 
 // export default AnimalList
