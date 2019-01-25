@@ -36,6 +36,8 @@ export default class ApplicationViews extends Component {
 
             .then(() => fetch("http://localhost:5002/owners").then(r => r.json()))
             .then(owners => newState.owners = owners)
+
+            .then(() => (this.setState(newState)))
     }
 
     render() {
