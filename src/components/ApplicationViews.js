@@ -21,13 +21,24 @@ export default class ApplicationViews extends Component {
         owners: []
     }
 
-
+    deleteAnimal = id => {
+        return fetch(`http://localhost:5002/animals/${id}`, {
+            method: "DELETE"
+        })
+        .then(response => response.json())
+        .then(() => fetch(`http://localhost:5002/animals`))
+        .then(response => response.json())
+        .then(animals => this.setState({
+            animals: animals
+        }));
+    };
     componentDidMount() {
         const newState = {}
 
+
         fetch("http://localhost:5002/animals").then(r => r.json())
             .then(animals => newState.animals = animals)
-
+            // This grabs the animals from JSON server, loops over the newState array and assings only animals to the variable animals.
             .then(() => fetch("http://localhost:5002/employees").then(r => r.json()))
             .then(employees => newState.employees = employees)
 
@@ -38,6 +49,7 @@ export default class ApplicationViews extends Component {
             .then(owners => newState.owners = owners)
 
             .then(() => (this.setState(newState)))
+            // You have to setState after declaring newState; setState grabs the individual items in newState={} and puts them in the newState array, and then takes the newState = {} array itself and shoves them into their respective categories in state={[]}
     }
 
     render() {
@@ -47,7 +59,7 @@ export default class ApplicationViews extends Component {
                     return <Locations locations={this.state.locations} />
                 }} />
                 <Route exact path="/animals" render={(props) => {
-                    return <AnimalList animals={this.state.animals} />
+                    return <AnimalList deleteAnimal={this.deleteAnimal} animals={this.state.animals} />
                 }} />
                 <Route exact path="/employees" render={(props) => {
                     return <EmployeeList employees={this.state.employees} />
@@ -152,4 +164,3 @@ export default class ApplicationViews extends Component {
 //         )
 //     }
 // }
-//

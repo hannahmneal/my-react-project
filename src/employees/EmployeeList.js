@@ -3,14 +3,14 @@
 import React, { Component } from 'react'
 class EmployeeList extends Component {
     render() {
-        console.log(this.props.employees);
+        {console.log(this.props.employees)};
 
         return (
             <section className="employees">
             {
-                this.props.employees.map(employee =>
-                    <div key={employee.id}>
-                        {employee.name}
+                this.props.employees.map(responseEmployee =>
+                    <div key={responseEmployee.id}>
+                        {responseEmployee.name}
                     </div>
                 )
                 /*employee: this is just what we call the new array of data we received from the API when we used .map*/

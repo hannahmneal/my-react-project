@@ -5,12 +5,12 @@ class Owners extends Component {
         return (
             <section className="owners">
             {
-                this.props.owners.map(owner =>
-                    <div key={owner.id}>
+                this.props.owners.map(responseOwner =>
+                    <div key={responseOwner.id}>
                         {<br/>}
-                        {owner.name}
+                        {responseOwner.name}
                         {<br/>}
-                        {owner.phoneNumber}
+                        {responseOwner.phoneNumber}
                         {<br/>}
                     </div>
                 )
