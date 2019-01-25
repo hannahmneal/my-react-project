@@ -3,7 +3,7 @@
 
 import { Route } from 'react-router-dom'
 import React, { Component } from "react"
-import AnimalList from "./AnimalList"
+import AnimalList from "./animal/AnimalList"
 import Locations from "./Locations"
 import EmployeeList from "../employees/EmployeeList"
 import Owners from "./Owners"
@@ -19,6 +19,20 @@ export default class ApplicationViews extends Component {
         owners: []
     };
 
+// ==========================================3======  CHAPTER 5 SETUP    ===============================================
+    deleteAnimal = id => {
+        return fetch(`http://localhost:5002/animals/${id}`, {
+            method: "DELETE"
+        })
+        .then(e => e.json())
+        .then(() => fetch(`http://localhost:5002/animals`))
+        .then(e => e.json())
+        .then(animals => this.setState({
+            animals: animals
+        })
+        )
+    }
+// ========================================================================================================================
     componentDidMount() {
         const newState = {}
 
@@ -64,9 +78,15 @@ export default class ApplicationViews extends Component {
                 {/* <Route exact path ="/" render{(props) => {
                     return <Home/>
                 }} /> */}
-                <Route exact path="/animals" render={(props) => {
+                {/* <Route exact path="/animals" render={(props) => {
                     return <AnimalList animals={this.state.animals} />
+                }} /> */}
+{/*=========================================================       CHAPTER 5 SETUP     =============================================*/}
+                <Route exact path="/animals" render={(props) => {
+                 return <AnimalList deleteAnimal={this.deleteAnimal} animals={this.state.animals} />
                 }} />
+{/* Notice that the code above contains the deleteAnimal function and the original animals function follows*/}
+{/*=================================================================================================================================*/}
                 <Route exact path="/employees" render={(props) => {
                     return <EmployeeList employees={this.state.employees} />
                 }} />
@@ -76,12 +96,13 @@ export default class ApplicationViews extends Component {
                 <Route exact path="/owners" render ={(props) => {
                     return <Owners owners={this.state.owners} />
                 }} />
+
             </React.Fragment>
         )
     }
 }
 
-// ================================================    PRACTICE 5      ===============================================
+// ================================================    PRACTICE 5 (CHAPTER 4)      ===============================================
 
 // class ApplicationViews extends Component {
 //     employeesFromAPI = [
@@ -139,5 +160,5 @@ export default class ApplicationViews extends Component {
 //         )
 //     }
 // }
-// 
+//
 // export default ApplicationViews
