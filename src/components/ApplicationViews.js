@@ -32,22 +32,34 @@ export default class ApplicationViews extends Component {
         })
         )
     }
+    deleteAnimal = id => {
+        return fetch(`http://localhost:5002/employees/${id}`, {
+            method: "DELETE"
+        })
+        .then(e => e.json())
+        .then(() => fetch(`http://localhost:5002/employees`))
+        .then(e => e.json())
+        .then(employees => this.setState({
+            employees: employees
+        })
+        )
+    }
 // ========================================================================================================================
     componentDidMount() {
         const newState = {}
 
         fetch("http://localhost:5002/animals").then(r => r.json())
             .then(animals => newState.animals = animals)
-            // .then(animals => {this.setState({animals:animals})
-            // })
+            .then(animals => {this.setState({animals:animals})
+            })
 
             .then(() => fetch("http://localhost:5002/employees").then(r => r.json()))
-            // .then(employees => newState.employees = employees)
+            .then(employees => newState.employees = employees)
             .then(employees => {this.setState({employees:employees})
             })
 
             .then(() => fetch("http://localhost:5002/locations").then(r => r.json()))
-            // .then(locations => newState.locations = locations)
+            .then(locations => newState.locations = locations)
             .then(locations => {this.setState({locations:locations})})
 
             .then(() => fetch("http://localhost:5002/owners").then(r => r.json()))

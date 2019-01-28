@@ -31,14 +31,14 @@ export default class AnimalList extends Component {
         return (
             <section className="animals">
             {
-                this.props.animals.map(animal =>
-                    <div key={animal.id} className="card">
+                this.props.animals.map(animals =>
+                    <div key={animals.id} className="card">
                         <div className="card-body">
                             <h5 className="card-title">
-                                <img src={cat} className="icon--dog" />
-                                {animal.name}
+                                <img src={cat} className="icon--cat" />
+                                {animals.name}
                                 <a href="#"
-                                    onClick={() => this.props.deleteAnimal(animal.id)}
+                                    onClick={() => this.props.deleteAnimal(animals.id)}
                                     className="card-link">Delete</a>
                             </h5>
                         </div>
