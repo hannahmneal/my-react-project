@@ -44,6 +44,18 @@ export default class ApplicationViews extends Component {
         })
         )
     }
+
+    deleteOwners = id => {
+        return fetch(`http://localhost:5002/owners/${id}`, {
+            method: "DELETE"
+        })
+        .then(e => e.json())
+        .then(() => fetch(`http://localhost:5002/owners`))
+        .then(e => e.json())
+        .then(owners => this.setState({
+            owners: owners
+        }))
+    }
 // ========================================================================================================================
     componentDidMount() {
         const newState = {}
@@ -64,7 +76,7 @@ export default class ApplicationViews extends Component {
 
             .then(() => fetch("http://localhost:5002/owners").then(r => r.json()))
             .then(owners => newState.owners = owners)
-            .then(() => this.setState(newState))
+            .then(owners => this.setState({owners:owners}))
     }
 
     render() {
@@ -90,7 +102,7 @@ export default class ApplicationViews extends Component {
                     return <Locations locations={this.state.locations} />
                 }} />
                 <Route exact path="/owners" render ={(props) => {
-                    return <Owners owners={this.state.owners} />
+                    return <Owners deleteOwners ={this.deleteOwners} owners={this.state.owners} />
                 }} />
 
             </React.Fragment>

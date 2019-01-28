@@ -42,11 +42,6 @@
       "id": 3,
       "name": "Allison",
       "phoneNumber": 5678901
-    },
-    {
-      "id": 4,
-      "name": "Emily",
-      "phoneNumber": 2345678
     }
   ]
 }
