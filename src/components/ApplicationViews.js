@@ -32,7 +32,7 @@ export default class ApplicationViews extends Component {
         })
         )
     }
-    deleteAnimal = id => {
+    deleteEmployee = id => {
         return fetch(`http://localhost:5002/employees/${id}`, {
             method: "DELETE"
         })
@@ -67,22 +67,6 @@ export default class ApplicationViews extends Component {
             .then(() => this.setState(newState))
     }
 
-    // UPDATE: Resolved 404 error and commented out the code below; uncommented componentDidMount() above. Doing so resolved the issue with the  owners link displaying the correct info when clicked.
-    // CODE LEAH SENT AFTER EXPERIENCING 404 ERRORS WITH THE CODE ABOVE:
-
-    // componentDidMount() {
-    //     const newState = {}
-
-
-    //     fetch("http://localhost:5002/animals")
-    //         .then(r => r.json())
-    //         .then(animals => newState.animals = animals)
-    //         .then(() => fetch("http://localhost:5002/employees")
-    //         .then(r => r.json()))
-    //         .then(employees => newState.employees = employees)
-    //         .then(() => this.setState(newState))
-    // }
-
     render() {
         return (
             <React.Fragment>
@@ -100,7 +84,7 @@ export default class ApplicationViews extends Component {
 {/* Notice that the code above contains the deleteAnimal function and the original animals function follows*/}
 {/*=================================================================================================================================*/}
                 <Route exact path="/employees" render={(props) => {
-                    return <EmployeeList employees={this.state.employees} />
+                    return <EmployeeList deleteEmployee={this.deleteEmployee} employees={this.state.employees} />
                 }} />
                 <Route exact path="/locations" render ={(props) => {
                     return <Locations locations={this.state.locations} />
@@ -113,7 +97,6 @@ export default class ApplicationViews extends Component {
         )
     }
 }
-
 // ================================================    PRACTICE 5 (CHAPTER 4)      ===============================================
 
 // class ApplicationViews extends Component {

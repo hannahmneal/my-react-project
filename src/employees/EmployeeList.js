@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 // ================================================    PRACTICE 2      ===============================================
-class EmployeeList extends Component {
+export default class EmployeeList extends Component {
     render() {
         // console.log(this.props.employees);
         return (
@@ -26,8 +26,6 @@ class EmployeeList extends Component {
         )
     }
 }
-
-export default EmployeeList
 
 // ================================================    PRACTICE 1      ===============================================
 // export default class EmployeeList  extends Component {
